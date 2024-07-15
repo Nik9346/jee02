@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Home Page</title>
 </head>
+	<jsp:include page="../Template/navbar.jsp"/>
 <body>
-
+	<h1>Pagina iniziale</h1>
+	<a href="login">Area Riservata</a>
 </body>
 </html>

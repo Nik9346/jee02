@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Area Utente</title>
+<title>Area Admin</title>
 </head>
 <body>
 <jsp:include page="../Template/navbar.jsp"/>
-	<h1>Area Riservata Utente</h1>
+	<h1>Area Riservata Amministratore</h1>
 	<a href="/jee-02">Torna in Home Page</a>
-	<a href="user?out">Logout</a>
+	<a href="admin?out">Logout</a>
 </body>
 </html>
