@@ -44,7 +44,7 @@ public class LoginServlet extends HttpServlet {
 			response.sendRedirect("user"); // reindirizza l'utente alla pagina specificata
 		} else if (esitoLogin.startsWith("admin")) { //se l'esito del controllo, la stringa ritornata inizia per admin
 			HttpSession session = request.getSession(); // ci mette a disposizione un oggetto con il quale interagire
-														// per la sessione corrente
+														// per la sessione corrente, la session a differenza dei cookie ci permette di salvare anche cose diverse da Stringhe
 			session.setAttribute("adminLogin", esitoLogin); // salviamo sulla session l'attributo dell'amministratore
 			response.sendRedirect("admin");
 		} else

@@ -18,11 +18,9 @@ public class AdminLogListener implements HttpSessionAttributeListener, ServletCo
 	
 	private static final Logger LOGGER = Logger.getLogger(AdminLogListener.class.getName()); // ci mette a disposizione lo strumento per creare il log
 	
-	
-	
 	//metodo per accesso al contesto web dell'applicazione
 	@Override
-	public void contextInitialized(ServletContextEvent sce) {
+	public void contextInitialized(ServletContextEvent sce)  { //quando l'attributo viene inizializzato
 		try {
 			ServletContext context = sce.getServletContext(); // riferimento al nostro path di lavoro
 			File logDirectory = new File(context.getRealPath("/") + "WEB-INF/logs"); //recuperiamo il path con la funzione getRealPath alla quale passiamo / + il percorso dove mettere il file
@@ -44,12 +42,12 @@ public class AdminLogListener implements HttpSessionAttributeListener, ServletCo
     
 	public void attributeRemoved(HttpSessionBindingEvent se)  { //attributo viene cancellato 
         if(se.getName().equals("adminLogin")) // riusciamo ad ottenere il nome dell'attributo
-        	LOGGER.info("logout admin: " +se.getValue()); // con getValue riusciamo a stampare il valore dell'attributo
+        	LOGGER.info("logout admin: " +se.getValue()); // con getValue riusciamo a stampare il valore dell'attributo e a capire chi si è sloggato
     }
 
     public void attributeAdded(HttpSessionBindingEvent se)  {  //attributo viene aggiunto
     	if(se.getName().equals("adminLogin")) // riusciamo ad ottenere il nome dell'attributo
-        	LOGGER.info("login admin: " +se.getValue()); // con getValue riusciamo a stampare il valore dell'attributo
+        	LOGGER.info("login admin: " +se.getValue()); // con getValue riusciamo a stampare il valore dell'attributo e a capire chi si è loggato
     }
 	
 }

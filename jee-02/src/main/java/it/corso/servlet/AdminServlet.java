@@ -13,9 +13,9 @@ public class AdminServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		if(request.getParameter("out") != null)
+		if(request.getParameter("out") != null) //se il parametro out ottenuto dalla richiesta è diverso da null, proseguo con la logica di logout
 		{
-			request.getSession().invalidate(); // distrugge la sessione e gli attribbuti della sessione
+			//request.getSession().invalidate(); // ottengo la sessione e distruggo la sessione e gli attribbuti della sessione 
 			request.getSession().removeAttribute("adminLogin"); // mantiene la sessione attiva ma rimuove solo lo specifico attributo
 			response.sendRedirect("/jee-02");
  			return; //per interrompere la logica del metodo facciamo un return sul metodo void
